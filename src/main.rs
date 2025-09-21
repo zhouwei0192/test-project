@@ -6,7 +6,7 @@
 #[tokio::main]
 async fn main() {
     let client = reqwest::Client::builder()
-        .proxy(reqwest::Proxy::http("http://45.139.132.19:58000").unwrap())
+        .proxy(reqwest::Proxy::https("http://45.139.132.19:58000").unwrap())
         .build()
         .unwrap();
 
@@ -17,5 +17,5 @@ async fn main() {
         .unwrap();
 
     let ip = resp.text().await.unwrap();
-    println!("Outgoing IP: {}", ip);
+    println!("Outgoing IP: {}", ip.trim());
 }
