@@ -11,7 +11,7 @@ async fn main() {
         .unwrap();
 
     let resp = client
-        .get("https://ifconfig.me")
+        .get("https://ifconfig.me/ip")
         .send()
         .await
         .unwrap();
